@@ -18,7 +18,7 @@ Thumbs.db
 
 # Environment files
 .env
-.env.*
+# .env.*
 
 # PHPUnit result cache
 .phpunit.result.cache

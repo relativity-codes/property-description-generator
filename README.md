@@ -38,7 +38,11 @@ This project is a Laravel application designed to generate AI-optimized property
 4. Set up your environment file:
    ```
    cp .env.example .env
+
    php artisan key:generate
+   ```
+   ```
+   OPENAI_API_KEY=
    ```
 
 5. Run migrations to set up the database:
@@ -72,28 +76,3 @@ Contributions are welcome! Please submit a pull request or open an issue for any
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
-
-## Screenshot-ready (for interviews)
-
-If you need a quick screenshot of the app for an interview or portfolio, follow these steps to produce a clean, production-like snapshot:
-
-1. Build frontend assets (creates optimized files in `public/build`):
-
-   npm install
-   npm run build
-
-2. Ensure the app key and database are set up:
-
-   cp .env.example .env
-   php artisan key:generate
-   php artisan migrate --seed
-
-3. Serve the app locally and open the root URL:
-
-   php artisan serve --host=127.0.0.1 --port=8000
-
-4. Open your browser at http://127.0.0.1:8000, set the viewport to 1200x800, and capture the landing page or the demo card. The landing page includes a demo of the Livewire property form ready for screenshots.
-
-Notes:
-- If you want to highlight tone variations, select the Tone dropdown in the form before generating the description.
-- The README includes quick run steps; for a full dev experience use `npm run dev` and `php artisan serve` while developing.
