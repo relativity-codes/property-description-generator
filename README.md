@@ -21,7 +21,7 @@ This project is a Laravel application designed to generate AI-optimized property
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/relativity-codes/property-description-generator.git
    cd property-description-generator
    ```
 

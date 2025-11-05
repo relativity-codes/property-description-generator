@@ -76,7 +76,9 @@ class OpenAIService
      */
     public function checkStatus(): array
     {
-        return Cache::remember('openai.status', 300, function () {
+    // Use the 'file' cache store explicitly to avoid database-backed cache errors
+    // in environments where the cache store may default to 'database' without migrations.
+    return Cache::store('file')->remember('openai.status', 300, function () {
             $apiKey = config('openai.api_key');
             $url = config('openai.url');
             $model = config('openai.model');

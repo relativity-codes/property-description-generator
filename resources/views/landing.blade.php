@@ -21,8 +21,14 @@
 <body class="bg-gradient-to-b from-gray-50 to-white text-gray-800 antialiased">
     <!-- Hero -->
     <header class="bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 text-white">
-        <?php $openaiStatus = app(\App\Services\OpenAIService::class)->checkStatus(); ?>
-        @if($openaiStatus['status'] !== 'ok')
+        <?php
+            try {
+                $openaiStatus = app(\App\Services\OpenAIService::class)->checkStatus();
+            } catch (\Exception $e) {
+                $openaiStatus = ['status' => 'error', 'message' => $e->getMessage()];
+            }
+        ?>
+        @if(isset($openaiStatus['status']) && $openaiStatus['status'] !== 'ok')
             <div class="w-full text-sm text-center py-2 px-4" style="background: rgba(0,0,0,0.08);">
                 @if($openaiStatus['status'] === 'no_key')
                     <div class="max-w-7xl mx-auto text-yellow-100">OpenAI: not configured — using local fallback. (<span class="font-semibold">{{ $openaiStatus['message'] }}</span>)</div>
