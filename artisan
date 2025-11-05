@@ -1,0 +1,17 @@
+<?php
+
+// Increase PHP memory limit for local development to avoid "Allowed memory size exhausted" errors
+// This is safe for development. For production, prefer adjusting php.ini or optimizing memory usage.
+// `env()` helper isn't available before the framework is bootstrapped, so use getenv() fallback.
+$cliMemory = getenv('APP_CLI_MEMORY_LIMIT') ?: '1G';
+@ini_set('memory_limit', $cliMemory);
+
+require __DIR__.'/bootstrap/app.php';
+
+use Illuminate\Contracts\Console\Kernel;
+
+$kernel = app(Kernel::class);
+$kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    $output = new Symfony\Component\Console\Output\ConsoleOutput
+);

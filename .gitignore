@@ -1,0 +1,38 @@
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# Laravel build / storage
+/public/hot
+/public/storage
+/public/build/
+/storage/*.key
+/storage/*.sqlite
+/database/*.sqlite
+/storage/logs/
+
+# Environment files
+.env
+.env.*
+
+# PHPUnit result cache
+.phpunit.result.cache
+
+# Local development
+/Homestead.json
+/.vagrant
+
+# Logs and system files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Other
+/.idea/
+.cache/

@@ -1,0 +1,30 @@
+{
+  "name": "nigeria-property-centre/property-description-generator",
+  "description": "A Laravel application for generating AI-optimized property descriptions.",
+  "type": "project",
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^11.0",
+    "livewire/livewire": "^3.0",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "mockery/mockery": "^1.4",
+    "laravel/tinker": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "php artisan package:discover --ansi"
+    ],
+    "test": "phpunit"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
